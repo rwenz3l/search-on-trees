@@ -1,9 +1,10 @@
 # grep-tree
+### A Search on Trees
 
 A Small Script I've thrown together to search on files created by the `tree` command.
 
 In particular this: `tree -fFhins --du /path/to/data`
 
 ## ToDo:
-- Implement JQuery
+- Implement JQuery ✓
 - Perform Index-Creation by click.
