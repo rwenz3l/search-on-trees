@@ -19,6 +19,18 @@
                    style="width: 100%;"
                    placeholder="RegEx">
         </div>
+    Search in: <select id="index_selector" name="index" onchange="search()">
+        <option value="">All</option>
+    <?php
+        foreach (new DirectoryIterator('index/') as $index) {
+            if($index->isDot()) continue;
+            if(! $index->isFile()){
+                $path = $index->getFilename();
+                echo('<option value=' . $path . '>' . $path . '</option>');
+            }
+        }
+    ?>
+    </select>
     </div>
     <hr/>
     <div id="search_result" style="padding: 50px;"></div>
