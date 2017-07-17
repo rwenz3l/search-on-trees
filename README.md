@@ -1,5 +1,4 @@
-# grep-tree
-### A Search on Trees
+# Search-on-Trees
 
 A Small Script I've thrown together to search on files created by the `tree` command.
 
