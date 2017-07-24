@@ -1,23 +1,18 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
 
-function getDirContents($dir, $results = array()){
-    $files = scandir($dir);
+function getDirContents($path) {
+    $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path));
 
-    foreach($files as $key => $value){
-        $path = realpath($dir.DIRECTORY_SEPARATOR.$value);
-        if(!is_dir($path)) {
-            $results[] = $path;
-        } else if($value != "." && $value != "..") {
-            getDirContents($path, $results);
-            $results[] = $path;
-        }
-    }
+    $files = array(); 
+    foreach ($rii as $file)
+        if (!$file->isDir())
+            $files[] = $file->getPathname();
 
-    return $results;
+    return $files;
 }
 
-$index = getDirContents("../index/", $index = array());
+$index = getDirContents("../index/");
 echo("<pre>");
 foreach($index as $i) {
     $command = "tail -n 1" . " " . $i . "";
