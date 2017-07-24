@@ -7,7 +7,7 @@
         if (!empty($_POST['case_sensitive'])) {
             $case_sensitive = true;
         }
-        $search_path = $_POST['search_path'];
+        $search_path = "../" . $_POST['search_path'];
         $command = "grep -r" . ($case_sensitive ? "" : "i") . "m 5000" . " " . escapeshellarg($_POST['grep_pattern']) . " " . $search_path . "";
         $result = -1;
         $return_code = -1;
