@@ -28,3 +28,15 @@ function search(){
         }
     });
 }
+
+function listIndex(){
+    console.log("List Index called");
+    $.ajax({
+        type: 'get',
+        url: 'include/list_index.php',
+        success: function (response) {
+            // We get the element having id of display_info and put the response inside it
+            $( '#index_list' ).html(response);
+        }
+    });
+}
