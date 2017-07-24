@@ -21,7 +21,7 @@ function search(){
         type: 'post',
         data: { 'grep_pattern': pattern,
         		'search_path' : path },
-        url: 'grep.php',
+        url: 'include/grep.php',
         success: function (response) {
             // We get the element having id of display_info and put the response inside it
             $( '#search_result' ).html(response);
