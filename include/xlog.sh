@@ -5,9 +5,11 @@ for diskpath in /mnt/*; do
     echo "----> CREATE LOG: ${drive}"
     if [[ $drive == "save?" ]]; then
       echo ">> Archive"
+      mkdir -p index/archive
       out="archive/${drive}"
     else
       echo ">> XServe"
+      mkdir -p index/xserve
       out="xserve/${drive}"
     fi
     tree -fFhins --du ${diskpath} -o index/${out}.log
