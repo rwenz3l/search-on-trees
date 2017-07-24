@@ -31,6 +31,8 @@
         }
     ?>
     </select>
+    <br/>
+    <a href="include/list_index.php">List Index</a>
     </div>
     <hr/>
     <div id="search_result" style="padding: 50px;"></div>

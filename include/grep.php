@@ -8,7 +8,7 @@
             $case_sensitive = true;
         }
         $search_path = "../" . $_POST['search_path'];
-        $command = "grep -r" . ($case_sensitive ? "" : "i") . "m 5000" . " " . escapeshellarg($_POST['grep_pattern']) . " " . $search_path . "";
+        $command = "grep -r" . ($case_sensitive ? "" : "i") . "m 5000" . " " . escapeshellarg($_POST['grep_pattern']) . " " . $search_path . " | sed 's/^.*log://'";
         $result = -1;
         $return_code = -1;
         $result = exec($command, $output, $return_code);
