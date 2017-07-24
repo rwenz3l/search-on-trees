@@ -3,7 +3,7 @@ for diskpath in /mnt/*; do
   echo "--> PATH: ${diskpath}"
   if $(mountpoint -q ${diskpath}); then
     echo "----> CREATE LOG: ${drive}"
-    if [[ $drive == "save?" ]]; then
+    if [[ "${drive}" == "safe"* ]]; then
       echo ">> Archive"
       mkdir -p index/archive
       out="archive/${drive}"
