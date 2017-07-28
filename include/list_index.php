@@ -23,9 +23,9 @@ foreach($files as $f) {
     $index[] = "$fileName" . "$output";
 }
 
-$sorted = sort($index);
+sort($index);
 
-foreach($sorted as $s) {
+foreach($index as $i => $s) {
     echo("> " . $s . PHP_EOL);
 }
 
