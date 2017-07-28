@@ -12,12 +12,23 @@ function getDirContents($path) {
     return $files;
 }
 
-$index = getDirContents("../index/");
+$files = getDirContents("../index/");
+$index = array();
+
 echo("<pre>");
-foreach($index as $i) {
-    $command = "tail -n 1" . " " . $i . "";
+foreach($files as $f) {
+    $command = "tail -n 1" . " " . $f . "";
     $output = shell_exec($command);
-    echo("> ".basename($i)." | "."$output".PHP_EOL);
+    $fileName = basename($f);
+    $index[] = "$fileName" . "$output";
 }
+
+$sorted = sort($index);
+
+foreach($sorted as $s) {
+    echo("> " . $s . PHP_EOL);
+}
+
+// echo("> ".basename($i)." | "."$output".PHP_EOL);
 echo("</pre>");
 ?>

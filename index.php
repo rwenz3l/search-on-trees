@@ -8,7 +8,6 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <script src="js/jquery.min.js"></script>
 	    <script src="js/user.js"></script>
-	    </script>
     </head>
     <body>
 	<div class="center" style="width: 600px;">
