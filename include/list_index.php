@@ -20,7 +20,7 @@ foreach($files as $f) {
     $command = "tail -n 1" . " " . $f . "";
     $output = shell_exec($command);
     $fileName = basename($f);
-    $index[] = "$fileName" . "$output";
+    $index[] = "$fileName" . " | " . "$output";
 }
 
 sort($index);
